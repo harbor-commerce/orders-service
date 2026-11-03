@@ -1,7 +1,7 @@
-export const statuses = ['created', 'paid', 'shipped', 'cancelled']
+export const statuses = ['created', 'paid', 'payment_failed', 'shipped', 'cancelled']
 
 export function canCancel(order) {
-  return order.status === 'created' || order.status === 'paid'
+  return ['created', 'paid', 'payment_failed'].includes(order.status)
 }
 
 export const routes = {
